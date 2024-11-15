@@ -1,0 +1,7 @@
+{
+  "name": "PoliApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
