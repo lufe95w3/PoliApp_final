@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="header-content">
+        Politécnico Grancolombiano
+        <div class="subtitle">Institución educativa</div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center" fullscreen>
+  <div class="content-wrapper">
+    <ion-button expand="block" routerLink="/menu" class="custom-button">Conoce más</ion-button>
+  </div>
+  <div class="footer-text">
+    <p>Explora la educación en el Politécnico Grancolombiano</p>
+  </div>
+</ion-content>
+
+<style>
+  /* Fondo gris claro y color de los textos */
+  ion-content {
+    --background: #dad7d7; /* Gris claro */
+  }
+
+  ion-toolbar {
+    --background: #383737d6; /* Gris beige para la barra */
+  }
+
+  .header-content {
+    text-align: center;
+    color: #ffffff; /* Azul suave para el título */
+  }
+
+  .subtitle {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #f3f3f3; /* Azul suave para el subtítulo */
+    margin-top: 4px;
+    display: block;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .custom-button {
+    --background: #4e8bc7; /* Naranja beige */
+    --color: white; /* Texto blanco */
+    --border-radius: 10px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente */
+  }
+
+  ion-button {
+    margin-top: -10vh;
+  }
+
+  .footer-text {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #333333; /* Gris muy oscuro para el pie de página */
+  }
+</style>

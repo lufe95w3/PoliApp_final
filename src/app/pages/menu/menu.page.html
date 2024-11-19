@@ -1,0 +1,65 @@
+<ion-header> 
+  <ion-toolbar>
+    <ion-title>
+      Menú Principal
+    </ion-title>
+    <!-- Botón de Cierre en la parte superior derecha -->
+    <ion-buttons slot="end">
+      <ion-button (click)="goHome()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center" fullscreen>
+  <div class="menu-buttons">
+    <ion-button expand="block" color="light" routerLink="/carreras" class="custom-button">
+      Formacion academica profesional
+    </ion-button>
+    <ion-button expand="block" color="light" routerLink="/info-universidad" class="custom-button">
+      Info Universidad
+    </ion-button>
+    <ion-button expand="block" color="light" routerLink="/contacto" class="custom-button">
+      Contacto
+    </ion-button>
+    <ion-button expand="block" color="light" routerLink="/fechas-inscripciones" class="custom-button">
+      Fechas de Inscripción
+    </ion-button>
+  </div>
+</ion-content>
+
+<style>
+  /* Fondo gris claro */
+  ion-content {
+    --background: #dad7d7; /* Gris claro */
+  }
+
+  ion-toolbar {
+    --background: #383737d6; /* Gris beige para la barra */
+  }
+
+  ion-title {
+    color: #ffffff; /* Blanco para el título */
+  }
+
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+  }
+
+  .custom-button {
+    width: 80%; /* Mantiene el 80% del ancho de la pantalla */
+    font-size: 0.9em; /* Tamaño de fuente reducido */
+    background-color: #4e8bc7; /* Azul suave */
+    color: white; /* Color de texto blanco */
+    --border-radius: 10px; /* Bordes redondeados */
+  }
+
+  ion-button {
+    margin-top: 10px;
+  }
+</style>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Programas Académicos
+    </ion-title>
+    <!-- Botón de Cierre en la parte superior derecha -->
+    <ion-buttons slot="end">
+      <ion-button (click)="goCarreras()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen>
+  <div class="info-section">
+    <p>Conoce aquí los programas que ofrecemos</p>
+    <ion-button expand="block" color="light" routerLink="/becas">
+      Becas
+    </ion-button>
+  </div>
+
+  <div class="info-section">
+    <p>Conoce nuestros programas de intercambios</p>
+    <ion-button expand="block" color="light" routerLink="/intercambios">
+      Intercambios
+    </ion-button>
+  </div>
+</ion-content>

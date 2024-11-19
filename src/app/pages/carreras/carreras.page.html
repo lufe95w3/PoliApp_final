@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Formacion academica profesional
+    </ion-title>
+    <!-- Botón de Cierre en la parte superior derecha -->
+    <ion-buttons slot="end">
+      <ion-button (click)="goToMenu()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="info-section">
+    <p>Conoce aquí nuestras carreras universitarias</p>
+    <ion-button expand="block" color="light" routerLink="/detalles-carreras">
+      Carreras
+    </ion-button>
+  </div>
+
+  <div class="info-section">
+    <p>Conoce aquí nuestros programas para ti</p>
+    <ion-button expand="block" color="light" routerLink="/programas">
+      Programas
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Carreras Universitarias</ion-title>
+    <!-- Botón de Cierre en la parte superior derecha -->
+    <ion-buttons slot="end">
+      <ion-button (click)="goToCarreras()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Información de las carreras -->
+  <div class="career-list">
+    <div class="career-item">
+      <p>Ingeniería de Software</p>
+      <p>8 Semestres</p>
+    </div>
+    <div class="career-item">
+      <p>Finanzas</p>
+      <p>8 Semestres</p>
+    </div>
+    <div class="career-item">
+      <p>Economía</p>
+      <p>8 Semestres</p>
+    </div>
+    <div class="career-item">
+      <p>Ingeniería en Telecomunicaciones</p>
+      <p>8 Semestres</p>
+    </div>
+  </div>
+</ion-content>
