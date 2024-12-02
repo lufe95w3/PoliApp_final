@@ -1,7 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Programas Académicos
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">Programas Académicos</span>
+        </div>
+      </div>
     </ion-title>
     <!-- Botón de Cierre en la parte superior derecha -->
     <ion-buttons slot="end">
@@ -12,18 +19,136 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" fullscreen>
+<ion-content class="ion-padding ion-text-center no-scroll" fullscreen>
+  <!-- Sección de Becas -->
   <div class="info-section">
-    <p>Conoce aquí los programas que ofrecemos</p>
-    <ion-button expand="block" color="light" routerLink="/becas">
+    <p>Conoce aquí los programas de becas que ofrecemos</p>
+    <ion-button expand="block" class="custom-button" routerLink="/becas">
+      <ion-icon slot="start" name="cash"></ion-icon>
       Becas
     </ion-button>
   </div>
 
+  <!-- Sección de Intercambios -->
   <div class="info-section">
     <p>Conoce nuestros programas de intercambios</p>
-    <ion-button expand="block" color="light" routerLink="/intercambios">
+    <ion-button expand="block" class="custom-button" routerLink="/intercambios">
+      <ion-icon slot="start" name="globe"></ion-icon>
       Intercambios
     </ion-button>
   </div>
 </ion-content>
+
+<!-- Fuentes de Google -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Fondo azul similar al de la página Menu */
+  ion-content {
+    --background: #4a7eb5; /* Azul intermedio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    background-image: url('/assets/background-pattern.png'); /* Patrón de fondo sutil */
+    background-size: cover;
+  }
+
+  /* Estilo de la barra de herramientas */
+  ion-toolbar {
+    --background: #202226; /* Gris oscuro */
+  }
+
+  ion-title {
+    color: white; /* Blanco para el título */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+  }
+
+  /* Contenedor para el logo y el título */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #202226, #201f1f); /* Gradiente oscuro */
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  /* Logo */
+  .logo-container img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  /* Contenedor del título */
+  .title-container {
+    color: white;
+  }
+
+  .main-title {
+    font-size: 1em; /* Tamaño reducido */
+    font-weight: 500; /* Peso más liviano */
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra suave */
+  }
+
+  /* Estilo de los botones de la sección */
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los elementos */
+    text-align: center;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    max-width: 400px; /* Limita el ancho máximo para evitar que los botones se estiren demasiado */
+    margin: 0 auto; /* Centra el contenedor */
+    padding-top: 20px; /* Reducir el espacio en la parte superior */
+  }
+
+  .info-section p {
+    font-size: 1.1em; /* Tamaño de fuente ajustado */
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    margin-bottom: 10px; /* Espacio entre el texto y el botón */
+  }
+
+  .custom-button {
+    --background: #425075; /* Azul de fondo */
+    --color: white; /* Color de texto blanco */
+    font-size: 0.85em; /* Tamaño de fuente reducido */
+    --border-radius: 30px; /* Bordes redondeados */
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    box-shadow: none;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    width: 90%; /* Asegura que el botón no ocupe todo el ancho de la pantalla */
+    max-width: 350px; /* Limita el ancho del botón */
+  }
+
+  .custom-button:hover {
+    --background: #008ab800; /* Tono más oscuro en hover */
+    transform: scale(1.05); /* Animación de escala */
+  }
+
+  ion-button {
+    margin-top: 10px;
+  }
+
+  /* Eliminar márgenes globales */
+  .no-scroll {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+  }
+</style>

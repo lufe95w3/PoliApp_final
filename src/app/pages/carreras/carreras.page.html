@@ -1,7 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Formacion academica profesional
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">Formación Académica Profesional</span>
+        </div>
+      </div>
     </ion-title>
     <!-- Botón de Cierre en la parte superior derecha -->
     <ion-buttons slot="end">
@@ -12,18 +19,131 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content class="ion-padding ion-text-center no-scroll" fullscreen>
   <div class="info-section">
     <p>Conoce aquí nuestras carreras universitarias</p>
-    <ion-button expand="block" color="light" routerLink="/detalles-carreras">
+    <ion-button expand="block" class="custom-button" routerLink="/detalles-carreras">
+      <ion-icon slot="start" name="book"></ion-icon>
       Carreras
     </ion-button>
   </div>
 
   <div class="info-section">
     <p>Conoce aquí nuestros programas para ti</p>
-    <ion-button expand="block" color="light" routerLink="/programas">
+    <ion-button expand="block" class="custom-button" routerLink="/programas">
+      <ion-icon slot="start" name="school"></ion-icon>
       Programas
     </ion-button>
   </div>
 </ion-content>
+
+<!-- Fuentes de Google -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Fondo azul similar al de la página Menu */
+  ion-content {
+    --background: #4a7eb5; /* Azul intermedio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    background-image: url('/assets/background-pattern.png'); /* Patrón de fondo sutil */
+    background-size: cover;
+  }
+
+  /* Estilo de la barra de herramientas */
+  ion-toolbar {
+    --background: #202226; /* Gris oscuro */
+  }
+
+  ion-title {
+    color: white; /* Blanco para el título */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+  }
+
+  /* Contenedor para el logo y el título */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #202226, #201f1f); /* Gradiente oscuro */
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  /* Logo */
+  .logo-container img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  /* Contenedor del título */
+  .title-container {
+    color: white;
+  }
+
+  .main-title {
+    font-size: 1em; /* Tamaño reducido */
+    font-weight: 500; /* Peso más liviano */
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra suave */
+  }
+
+  /* Estilo de los botones de la sección */
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Ajustar el espacio entre los elementos */
+    padding-top: 20px; /* Reducir el espacio en la parte superior */
+    text-align: center;
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+  }
+
+  .info-section p {
+    font-size: 1.1em; /* Tamaño de fuente ajustado */
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    margin-bottom: 10px; /* Espacio entre el texto y el botón */
+  }
+
+  .custom-button {
+    --background: #425075; /* Azul de fondo */
+    --color: white; /* Color de texto blanco */
+    width: 80%; /* Mantiene el 80% del ancho de la pantalla */
+    font-size: 0.85em; /* Tamaño de fuente reducido */
+    --border-radius: 30px; /* Bordes redondeados */
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    box-shadow: none;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    text-align: center; /* Asegura que el texto esté centrado en el botón */
+  }
+
+  .custom-button:hover {
+    --background: #008ab800; /* Tono más oscuro en hover */
+    transform: scale(1.05); /* Animación de escala */
+  }
+
+  ion-button {
+    margin-top: 10px;
+  }
+
+  /* Eliminar márgenes globales */
+  .no-scroll {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+  }
+</style>

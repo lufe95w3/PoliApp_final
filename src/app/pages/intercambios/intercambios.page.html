@@ -1,19 +1,165 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Intercambios
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">Intercambios</span>
+        </div>
+      </div>
     </ion-title>
-    <!-- Botón de Cierre en la parte superior derecha -->
+    <!-- Botón de Cierre -->
     <ion-buttons slot="end">
-      <ion-button (click)="goToProgramas()">
+      <ion-button (click)="goToProgramas()" class="close-button">
         <ion-icon name="close" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <p>
-    Nuestro programa de intercambios permite a los estudiantes estudiar en el extranjero, ampliando su formación académica y cultural. Mediante acuerdos con universidades internacionales, los participantes adquieren nuevas perspectivas, idiomas y habilidades globales, preparándolos para un mundo interconectado.
-  </p>
+<ion-content fullscreen class="content-background no-scroll">
+  <div class="section">
+    <!-- Tarjeta principal para la información de intercambios -->
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Programa de Intercambios</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+          <ion-icon name="globe" slot="start"></ion-icon>
+          Nuestro programa de intercambios permite a los estudiantes estudiar en el extranjero, ampliando su formación académica y cultural. Mediante acuerdos con universidades internacionales, los participantes adquieren nuevas perspectivas, idiomas y habilidades globales, preparándolos para un mundo interconectado.
+        </p>
+        <p>
+          <ion-icon name="school" slot="start"></ion-icon>
+          A través de alianzas con diversas universidades, nuestros estudiantes pueden acceder a programas académicos y culturales en diferentes partes del mundo.
+        </p>
+        <p>
+          <ion-icon name="language" slot="start"></ion-icon>
+          El intercambio también promueve el aprendizaje de nuevos idiomas, preparando a los estudiantes para enfrentar los desafíos de un mundo globalizado.
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Imagen al final -->
+  <div class="image-container">
+    <img src="/assets/intercambio.png" alt="Imagen de intercambios" class="final-image" />
+  </div>
 </ion-content>
+
+<!-- Estilo -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Fondo de contenido */
+  ion-content {
+    --background: #4a7eb5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Barra de herramientas */
+  ion-toolbar {
+    --background: #202226; /* Gris oscuro */
+  }
+
+  ion-title {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Encabezado */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #202226, #201f1f);
+    padding: 5px 0;
+  }
+
+  .logo-container img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  .main-title {
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Botón de cierre */
+  .close-button ion-icon {
+    color: white;
+    font-size: 1.5em;
+  }
+
+  /* Sección de contenido */
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* Tarjetas */
+  .info-card {
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .info-card ion-card-header {
+    background-color: #302f37df;
+    color: white;
+  }
+
+  .info-card ion-card-title {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .info-card ion-card-content {
+    font-size: 1.1em;
+    color: #333;
+    padding: 15px;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  /* Estilo de la imagen al final */
+  .image-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .final-image {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilo para los iconos en los párrafos */
+  ion-icon {
+    color: #007bb6;
+    font-size: 1.4em;
+    margin-right: 10px;
+  }
+</style>

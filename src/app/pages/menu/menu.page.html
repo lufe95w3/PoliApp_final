@@ -1,7 +1,14 @@
 <ion-header> 
   <ion-toolbar>
     <ion-title>
-      Menú Principal
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">Menú Principal</span>
+        </div>
+      </div>
     </ion-title>
     <!-- Botón de Cierre en la parte superior derecha -->
     <ion-buttons slot="end">
@@ -12,54 +19,116 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center" fullscreen>
+<ion-content class="ion-padding ion-text-center no-scroll" fullscreen>
   <div class="menu-buttons">
-    <ion-button expand="block" color="light" routerLink="/carreras" class="custom-button">
-      Formacion academica profesional
+    <ion-button expand="block" class="custom-button" routerLink="/carreras">
+      Formacion académica profesional
     </ion-button>
-    <ion-button expand="block" color="light" routerLink="/info-universidad" class="custom-button">
+    <ion-button expand="block" class="custom-button" routerLink="/info-universidad">
       Info Universidad
     </ion-button>
-    <ion-button expand="block" color="light" routerLink="/contacto" class="custom-button">
+    <ion-button expand="block" class="custom-button" routerLink="/contacto">
       Contacto
     </ion-button>
-    <ion-button expand="block" color="light" routerLink="/fechas-inscripciones" class="custom-button">
+    <ion-button expand="block" class="custom-button" routerLink="/fechas-inscripciones">
       Fechas de Inscripción
     </ion-button>
   </div>
 </ion-content>
 
+<!-- Fuentes de Google -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  /* Fondo gris claro */
+  /* Fondo azul similar al de home */
   ion-content {
-    --background: #dad7d7; /* Gris claro */
+    --background: #4a7eb5; /* Azul intermedio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
   }
 
+  /* Estilo de la barra de herramientas */
   ion-toolbar {
-    --background: #383737d6; /* Gris beige para la barra */
+    --background: #202226; /* Gris oscuro */
   }
 
   ion-title {
-    color: #ffffff; /* Blanco para el título */
+    color: white; /* Blanco para el título */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
   }
 
+  /* Contenedor para el logo y el título */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #202226, #201f1f); /* Gradiente oscuro */
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  /* Logo */
+  .logo-container img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  /* Contenedor del título */
+  .title-container {
+    color: white;
+  }
+
+  .main-title {
+    font-size: 1em; /* Tamaño reducido */
+    font-weight: 500; /* Peso más liviano */
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra suave */
+  }
+
+  /* Estilo de los botones del menú */
   .menu-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px; /* Ajustar el espacio entre botones */
     padding-top: 40px;
   }
 
   .custom-button {
+    --background: #425075; /* Azul de fondo */
+    --color: white; /* Color de texto blanco */
     width: 80%; /* Mantiene el 80% del ancho de la pantalla */
-    font-size: 0.9em; /* Tamaño de fuente reducido */
-    background-color: #4e8bc7; /* Azul suave */
-    color: white; /* Color de texto blanco */
-    --border-radius: 10px; /* Bordes redondeados */
+    font-size: 0.85em; /* Tamaño de fuente reducido */
+    --border-radius: 30px; /* Bordes redondeados */
+    font-family: 'Roboto', sans-serif;
+    box-shadow: none;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .custom-button:hover {
+    --background: #008ab800; /* Tono más oscuro en hover */
+    transform: scale(1.05); /* Animación de escala */
   }
 
   ion-button {
     margin-top: 10px;
+  }
+
+  /* Eliminar márgenes globales */
+  .no-scroll {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
   }
 </style>

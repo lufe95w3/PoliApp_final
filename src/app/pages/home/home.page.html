@@ -2,70 +2,273 @@
   <ion-toolbar>
     <ion-title>
       <div class="header-content">
-        Politécnico Grancolombiano
-        <div class="subtitle">Institución educativa</div>
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">PoliApp</span>
+        </div>
       </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center" fullscreen>
-  <div class="content-wrapper">
-    <ion-button expand="block" routerLink="/menu" class="custom-button">Conoce más</ion-button>
+<ion-content class="ion-padding ion-text-center no-scroll" fullscreen>
+  <!-- Contenedor principal -->
+  <div class="main-wrapper">
+    <!-- Imagen centrada y ubicada arriba del texto -->
+    <div class="background-image">
+      <img src="assets/campus.jpg" alt="Campus Politécnico Grancolombiano" />
+    </div>
+
+    <!-- Texto principal -->
+    <p class="main-text">POLITÉCNICO GRANCOLOMBIANO</p>
+    <p class="sub-text">INSTITUCIÓN EDUCATIVA</p>
+
+    <!-- Botón debajo del texto -->
+    <ion-button expand="block" class="custom-button" routerLink="/menu">Conoce más</ion-button>
   </div>
-  <div class="footer-text">
-    <p>Explora la educación en el Politécnico Grancolombiano</p>
+
+  <!-- Sección "Porque elegirnos?" justo debajo del botón -->
+  <div class="why-choose-us">
+    <ion-card class="testimonial-card">
+      <ion-card-header>
+        <ion-card-title>¿Por qué elegirnos?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        "Educación superior con más de 30 años de experiencia, ofreciendo programas académicos de alta calidad y formación integral."
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
 
+<!-- Pie de página "Explora la educación" -->
+<footer class="footer">
+  <p>Explora la educación en el Politécnico Grancolombiano</p>
+</footer>
+
+<!-- Fuentes de Google -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  /* Fondo gris claro y color de los textos */
+  /* Asegurarse de que no haya márgenes ni padding en ion-content */
   ion-content {
-    --background: #dad7d7; /* Gris claro */
-  }
-
-  ion-toolbar {
-    --background: #383737d6; /* Gris beige para la barra */
-  }
-
-  .header-content {
-    text-align: center;
-    color: #ffffff; /* Azul suave para el título */
-  }
-
-  .subtitle {
-    font-size: 0.9em;
-    font-weight: normal;
-    color: #f3f3f3; /* Azul suave para el subtítulo */
-    margin-top: 4px;
-    display: block;
-  }
-
-  .content-wrapper {
+    --background: #4a7eb5; /* Azul de fondo */
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido se distribuya entre el pie de página */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    overflow: hidden; /* Elimina el scroll */
+  }
+
+  /* Eliminar márgenes globales */
+  .no-scroll {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* Contenedor para logo y título */
+  .header-content {
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    background: linear-gradient(45deg, #202226, #201f1f);
+    padding: 5px 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
 
-  .custom-button {
-    --background: #4e8bc7; /* Naranja beige */
-    --color: white; /* Texto blanco */
-    --border-radius: 10px; /* Bordes redondeados */
-    font-size: 1em; /* Tamaño de fuente */
+  /* Logo reducido */
+  .logo-container img {
+    width: 40px;
+    margin-right: 8px;
+    animation: logoSlide 1s ease-out;
   }
 
-  ion-button {
-    margin-top: -10vh;
+  /* Animación para el logo */
+  @keyframes logoSlide {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
-  .footer-text {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
+  /* Contenedor del título */
+  .title-container {
+    color: white;
+  }
+
+  .main-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: white;
     text-align: center;
-    color: #333333; /* Gris muy oscuro para el pie de página */
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text; /* Agregado para compatibilidad */
+    color: transparent;
+  }
+
+  /* Contenedor principal */
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    animation: fadeIn 1s ease-out;
+    z-index: 1;
+    margin-top: 0; /* Subir la imagen y el texto */
+  }
+
+  /* Animación de desvanecimiento */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Imagen */
+  .background-image {
+    background-image: url('assets/campus.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    animation: zoomImage 4s ease-out infinite; /* Animación de zoom al cargar */
+    transition: transform 0.5s ease; /* Suaviza el zoom al pasar el ratón */
+  }
+
+  /* Animación para el zoom en la imagen */
+  @keyframes zoomImage {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.015); /* Ajusta la escala según lo desees */
+    }
+  }
+
+  /* Texto principal */
+  .main-text {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px; /* Reducir margen */
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.349);
+  }
+
+  /* Subtexto */
+  .sub-text {
+    font-size: 0.9em;
+    color: white;
+    margin-bottom: 10px; /* Reducir margen */
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.356);
+  }
+
+  /* Botón personalizado */
+  .custom-button {
+    --background: #425075;
+    --color: white;
+    --border-radius: 30px;
+    font-size: 1.0em;
+    padding: 6px 14px;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 20px; /* Espacio adicional antes del botón */
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Animación para el deslizamiento */
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .custom-button:hover {
+    background-color: #a1974100;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0);
+  }
+
+  /* Sección "Porque elegirnos?" */
+  .why-choose-us {
+    margin-top: 40px; /* Reducir espacio entre el botón y la sección */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Porque elegirnos? */
+  .testimonial-card {
+    width: 80%;
+    max-width: 350px;
+    margin: 10px auto;
+    box-shadow: 0px 4px 10px rgba(207, 119, 68, 0);
+    background-color: rgba(200, 200, 200, 0.272);
+    color: #2c2c2c; /* Color texto gris oscuro */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.071);
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Título "¿Por qué elegirnos?" */
+  .testimonial-card ion-card-title {
+    color: #373635; /* Azul vibrante para destacar */
+    font-size: 1.2em; /* Tamaño más grande */
+    text-align: center; /* Centrado */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.074); /* Sombra sutil */
+  }
+
+  .testimonial-card:hover {
+    box-shadow: 0px 6px 20px rgba(238, 238, 237, 0.35);
+  }
+
+  /* Estilo del pie de página */
+  .footer {
+    background: #4a7eb5;
+    color: rgb(236, 233, 233);
+    text-align: center;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: auto; /* Asegura que el pie esté al final */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Borde superior para el pie */
+  }
+
+
+  /* Asegura que el contenido no se salga del área */
+  .no-scroll ion-content {
+  overflow: hidden;
   }
 </style>

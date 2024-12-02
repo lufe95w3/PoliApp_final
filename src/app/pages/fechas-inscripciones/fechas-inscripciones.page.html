@@ -1,31 +1,186 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Fechas de Inscripciones
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">Fechas de Inscripciones</span>
+        </div>
+      </div>
     </ion-title>
-    <!-- Botón de Cierre en la parte superior derecha -->
+    <!-- Botón de Cierre -->
     <ion-buttons slot="end">
-      <ion-button (click)="goToMenu()">
+      <ion-button (click)="goToMenu()" class="close-button">
         <ion-icon name="close" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
-  <div>
-    <p>Las fechas de inscripción para el Politécnico Grancolombiano varían según el tipo de inscripción y el periodo académico:</p>
-    
-    <p><strong>Inscripciones y matrículas para el semestre cotemporal 2025-1:</strong> Del 29 de diciembre al 29 de febrero</p>
-    
-    <p><strong>Ingreso A:</strong> 2 de julio de 2025</p>
-    
-    <p><strong>Ingreso B:</strong> 20 de agosto de 2025</p>
-    
-    <p><strong>Ingreso C:</strong> 1 de octubre de 2025</p>
-    
-    <p><strong>Inscripciones a grados excepcionales del segundo semestre 2025:</strong> A partir del 15 de octubre</p>
-    
-    <p><strong>Preinscripción de asignaturas 2025-2:</strong> Del 1 al 16 de mayo</p>
+<ion-content fullscreen class="content-background">
+  <div class="section">
+    <!-- Primera tarjeta -->
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Inscripciones y Matrículas 2025-1</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="calendar" slot="icon-only"></ion-icon> Del 29 de diciembre al 29 de febrero
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjetas para ingresos -->
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Ingreso A</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="calendar" slot="icon-only"></ion-icon> 2 de julio de 2025
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Ingreso B</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="calendar" slot="icon-only"></ion-icon> 20 de agosto de 2025
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Ingreso C</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="calendar" slot="icon-only"></ion-icon> 1 de octubre de 2025
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta para grados excepcionales -->
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Grados Excepcionales 2025-2</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="calendar" slot="icon-only"></ion-icon> A partir del 15 de octubre
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta para preinscripción -->
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Preinscripción de Asignaturas 2025-2</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="calendar" slot="icon-only"></ion-icon> Del 1 al 16 de mayo
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
+
+<!-- Estilo -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Fondo de contenido */
+  ion-content {
+    --background: #4a7eb5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Evita que aparezca el scroll */
+  }
+
+  /* Barra de herramientas */
+  ion-toolbar {
+    --background: #202226; /* Gris oscuro */
+  }
+
+  ion-title {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Encabezado */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #202226, #201f1f);
+    padding: 5px 0;
+  }
+
+  .logo-container img {
+    width: 35px; /* Disminuir tamaño del logo */
+    margin-right: 8px;
+  }
+
+  .main-title {
+    font-size: 1em; /* Reducir tamaño del texto */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Botón de cierre */
+  .close-button ion-icon {
+    color: white;
+    font-size: 1.3em; /* Reducir tamaño del icono de cierre */
+  }
+
+  /* Sección de contenido */
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    gap: 10px; /* Reducir el espacio entre tarjetas */
+  }
+
+  /* Tarjetas */
+  .info-card {
+    width: 90%;
+    max-width: 400px; /* Reducir el tamaño máximo de las tarjetas */
+    background-color: #ffffff;
+    border-radius: 12px; /* Reducir el radio de los bordes */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); /* Menos sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-4px); /* Menos desplazamiento al pasar el mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+  }
+
+  .info-card ion-card-header {
+    background-color: #302f37df;
+    color: white;
+  }
+
+  .info-card ion-card-title {
+    font-size: 1.1em; /* Reducir tamaño del título */
+    font-weight: bold;
+  }
+
+  .info-card ion-card-content {
+    font-size: 1em; /* Reducir tamaño del contenido */
+    color: #333;
+    padding: 12px; /* Reducir el padding */
+    text-align: center;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Reducir el espacio entre el icono y el texto */
+  }
+
+  /* Iconos de calendario */
+  ion-icon {
+    color: #007bb6;
+    font-size: 1.1em; /* Reducir tamaño del icono */
+    vertical-align: middle;
+  }
+</style>

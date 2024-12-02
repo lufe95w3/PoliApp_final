@@ -1,6 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Carreras Universitarias</ion-title>
+    <ion-title>
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">Carreras Universitarias</span>
+        </div>
+      </div>
+    </ion-title>
     <!-- Botón de Cierre en la parte superior derecha -->
     <ion-buttons slot="end">
       <ion-button (click)="goToCarreras()">
@@ -10,24 +19,138 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center no-scroll">
   <!-- Información de las carreras -->
   <div class="career-list">
     <div class="career-item">
-      <p>Ingeniería de Software</p>
+      <ion-icon name="laptop" class="career-icon"></ion-icon>
+      <p><strong>Ingeniería de Software</strong></p>
       <p>8 Semestres</p>
     </div>
     <div class="career-item">
-      <p>Finanzas</p>
+      <ion-icon name="cash" class="career-icon"></ion-icon>
+      <p><strong>Finanzas</strong></p>
       <p>8 Semestres</p>
     </div>
     <div class="career-item">
-      <p>Economía</p>
+      <ion-icon name="analytics" class="career-icon"></ion-icon>
+      <p><strong>Economía</strong></p>
       <p>8 Semestres</p>
     </div>
     <div class="career-item">
-      <p>Ingeniería en Telecomunicaciones</p>
+      <ion-icon name="wifi" class="career-icon"></ion-icon>
+      <p><strong>Ingeniería en Telecomunicaciones</strong></p>
       <p>8 Semestres</p>
     </div>
   </div>
 </ion-content>
+
+<!-- Fuentes de Google -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Fondo azul similar al de la página Menu */
+  ion-content {
+    --background: #4a7eb5; /* Azul intermedio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+  }
+
+  /* Estilo de la barra de herramientas */
+  ion-toolbar {
+    --background: #202226; /* Gris oscuro */
+  }
+
+  ion-title {
+    color: white; /* Blanco para el título */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+  }
+
+  /* Contenedor para el logo y el título */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #202226, #201f1f); /* Gradiente oscuro */
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  /* Logo */
+  .logo-container img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  /* Contenedor del título */
+  .title-container {
+    color: rgb(142, 18, 18);
+  }
+
+  .main-title {
+    font-size: 1em; /* Tamaño reducido */
+    font-weight: 500; /* Peso más liviano */
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra suave */
+  }
+
+  /* Estilo de la lista de carreras */
+  .career-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Espaciado entre cada carrera */
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  /* Estilo de cada carrera */
+  .career-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4; /* Fondo gris suave */
+    padding: 8px 16px; /* Reducción del padding */
+    border-radius: 8px; /* Bordes más sutiles */
+    width: 80%; /* Reducir el ancho */
+    max-width: 320px; /* Limitar el ancho máximo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+  }
+
+  .career-item:hover {
+    transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
+  }
+
+  .career-item p {
+    margin: 5px 0;
+    font-size: 0.9em; /* Reducir aún más el tamaño de la fuente */
+    color: #333; /* Color gris oscuro para el texto */
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Icono de cada carrera */
+  .career-icon {
+    font-size: 1.8em; /* Reducir el tamaño de los iconos */
+    color: #4a7eb5; /* Azul para los iconos */
+    margin-bottom: 8px; /* Separación del icono y el texto */
+  }
+
+  /* Eliminar márgenes globales */
+  .no-scroll {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+  }
+</style>

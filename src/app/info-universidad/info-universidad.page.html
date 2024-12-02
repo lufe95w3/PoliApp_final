@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Información Universidad
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="/assets/icon.png" alt="Politécnico Grancolombiano" />
+        </div>
+        <div class="title-container">
+          <span class="main-title">Información Universidad</span>
+        </div>
+      </div>
     </ion-title>
-    <!-- Botón de Cierre en la parte superior derecha -->
     <ion-buttons slot="end">
       <ion-button (click)="goToMenu()">
         <ion-icon name="close" slot="icon-only"></ion-icon>
@@ -12,12 +18,152 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
-  <div>
-    <h2>Quiénes Somos</h2>
-    <h3>MISIÓN</h3>
-    <p>
-      Somos una Institución de Educación Superior con vocación formativa, que trabaja apasionadamente para brindar más y mejores oportunidades de acceso a una formación integral, pertinente y de calidad, que transforma vidas y genera un impacto positivo en la sociedad.
-    </p>
+<ion-content fullscreen class="content-background no-scroll">
+  <div class="section">
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Quiénes Somos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Somos una institución educativa de prestigio, comprometida con la formación integral de nuestros estudiantes. Ofrecemos una educación superior de calidad, preparando a los futuros líderes para contribuir al bienestar social.
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="section">
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>Misión</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Brindamos una educación accesible e inclusiva que forme profesionales íntegros y comprometidos con la sociedad, promoviendo el desarrollo académico, personal y social de nuestros estudiantes.
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
+
+<!-- Fuentes de Google -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Fondo azul similar al de la página Menu */
+  ion-content {
+    --background: #4a7eb5; /* Azul intermedio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    background-image: url('/assets/background-pattern.png'); /* Patrón de fondo sutil */
+    background-size: cover;
+  }
+
+  /* Estilo de la barra de herramientas */
+  ion-toolbar {
+    --background: #202226; /* Gris oscuro */
+  }
+
+  ion-title {
+    color: white; /* Blanco para el título */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+  }
+
+  /* Contenedor para el logo y el título */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #202226, #201f1f); /* Gradiente oscuro */
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  /* Logo */
+  .logo-container img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  /* Contenedor del título */
+  .title-container {
+    color: white;
+  }
+
+  .main-title {
+    font-size: 1em; /* Tamaño reducido */
+    font-weight: 500; /* Peso más liviano */
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra suave */
+  }
+
+  /* Estilo de las secciones de contenido */
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Estilo de las tarjetas */
+  .info-card {
+    width: 80%; /* Ajustar el tamaño de la tarjeta */
+    max-width: 500px; /* Tamaño máximo reducido */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 15px 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-8px); /* Levanta la tarjeta con mayor suavidad */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Sombra más destacada */
+  }
+
+  .ion-card-header {
+    background-color: #007bb6; /* Azul para el encabezado */
+    color: white;
+  }
+
+  .ion-card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+  }
+
+  .ion-card-content {
+    font-size: 1.1em;
+    color: #000000 !important; /* Asegura que el texto sea negro */
+    padding: 15px; /* Reducir el padding de la tarjeta */
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    line-height: 1.6;
+  }
+
+  /* Eliminar márgenes globales */
+  .no-scroll {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+  }
+
+  /* Especificar el color de los títulos y contenido de las tarjetas */
+  .info-card ion-card-title {
+    color: #000000 !important; /* Asegura que el título sea negro */
+  }
+
+  .info-card ion-card-content {
+    color: #000000 !important; /* Asegura que el contenido de la tarjeta sea negro */
+  }
+</style>
